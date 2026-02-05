@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Rose Flower Shop</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        rose: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            600: '#e11d48',
+                            700: '#be123c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <span class="text-2xl font-serif font-bold text-rose-600">Rose</span>
+                        <span class="text-xl font-light text-gray-600">Flower Shop</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="home.heroTitle">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="about.title">About</a>
+                    <a href="services.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="home.servicesTitle">Services</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="gallery.title">Gallery</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="contact.title">Contact</a>
+                    <div class="flex items-center space-x-2 border-l pl-4 ml-4">
+                        <button class="lang-btn text-sm font-medium transition" data-lang="en">EN</button>
+                        <span class="text-gray-300">|</span>
+                        <button class="lang-btn text-sm font-medium transition" data-lang="el">EL</button>
+                    </div>
+                </nav>
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-button" type="button" class="text-gray-600 hover:text-rose-600 focus:outline-none" aria-expanded="false">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="home.heroTitle">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="about.title">About</a>
+                <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="home.servicesTitle">Services</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="gallery.title">Gallery</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="contact.title">Contact</a>
+                <div class="px-3 py-2 flex space-x-4">
+                    <button class="lang-btn text-base font-medium" data-lang="en">English</button>
+                    <button class="lang-btn text-base font-medium" data-lang="el">Ελληνικά</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="relative h-96 flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/1055379/pexels-photo-1055379.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                <div class="absolute inset-0 bg-black/50"></div>
+            </div>
+            <div class="relative z-10 text-center text-white px-4">
+                <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4" data-i18n="about.title">About Us</h1>
+                <p class="text-xl md:text-2xl font-light" data-i18n="about.subtitle">Our passion for flowers</p>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <p class="text-xl text-gray-700 leading-relaxed" data-i18n="about.intro">
+                        Rose Flower Shop has been serving the Rethymno community with fresh flowers and creative designs.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+                    <div class="relative h-96 rounded-2xl overflow-hidden shadow-xl">
+                        <img src="https://images.pexels.com/photos/1070882/pexels-photo-1070882.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Anna at work" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6" data-i18n="about.story">Our Story</h2>
+                        <p class="text-gray-700 leading-relaxed mb-6" data-i18n="about.storyText">
+                            Founded by Anna Ntakakh, our shop brings a personal touch to every arrangement.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+                    <div class="flex flex-col justify-center order-2 md:order-1">
+                        <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6" data-i18n="about.philosophy">Our Philosophy</h2>
+                        <p class="text-gray-700 leading-relaxed" data-i18n="about.philosophyText">
+                            We believe flowers have the power to transform spaces and emotions.
+                        </p>
+                    </div>
+                    <div class="relative h-96 rounded-2xl overflow-hidden shadow-xl order-1 md:order-2">
+                        <img src="https://images.pexels.com/photos/931162/pexels-photo-931162.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh flowers" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-serif font-bold text-gray-900 mb-4" data-i18n="about.values">Our Values</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="about.value1">Quality</h3>
+                        <p class="text-gray-600 leading-relaxed" data-i18n="about.value1Desc">We source only the freshest flowers.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="about.value2">Creativity</h3>
+                        <p class="text-gray-600 leading-relaxed" data-i18n="about.value2Desc">Unique designs tailored to you.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="about.value3">Service</h3>
+                        <p class="text-gray-600 leading-relaxed" data-i18n="about.value3Desc">Personal attention to every customer.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition text-center">
+                        <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="about.value4">Passion</h3>
+                        <p class="text-gray-600 leading-relaxed" data-i18n="about.value4Desc">We love what we do.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-br from-rose-50 to-pink-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-2xl text-gray-700 leading-relaxed mb-8 italic" data-i18n="about.ctaText">
+                    "Let us bring your vision to life."
+                </p>
+                <a href="contact.html" class="inline-flex items-center space-x-2 bg-rose-600 hover:bg-rose-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all shadow-lg hover:shadow-xl group">
+                    <span data-i18n="about.contactButton">Contact Us</span>
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-4">Rose Flower Shop</h3>
+                    <p class="text-gray-400">Rethymno, Crete</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4" data-i18n="contact.hours">Opening Hours</h4>
+                    <p class="text-gray-400" data-i18n="contact.hoursInfo">Mon-Sat: 9:00 - 21:00</p>
+                    <p class="text-gray-400" data-i18n="contact.hoursSunday">Sun: Closed</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Social</h4>
+                    <a href="https://www.facebook.com/anna.ntakakh" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">Facebook</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                &copy; 2024 Rose Flower Shop. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/language-toggle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

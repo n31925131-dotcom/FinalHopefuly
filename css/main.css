@@ -1,0 +1,76 @@
+/* Custom styles for Rose Flower Shop */
+
+:root {
+  --color-rose-50: #fff1f2;
+  --color-rose-100: #ffe4e6;
+  --color-rose-200: #fecdd3;
+  --color-rose-600: #e11d48;
+  --color-rose-700: #be123c;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1f2937;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Mobile Menu Transition */
+#mobile-menu {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hero Section Overlay */
+.hero-overlay {
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.5), transparent);
+}
+
+/* Image Hover Effects */
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90vh;
+  margin: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}

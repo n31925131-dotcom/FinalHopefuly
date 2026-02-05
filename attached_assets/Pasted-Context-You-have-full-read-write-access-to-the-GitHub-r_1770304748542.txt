@@ -1,0 +1,95 @@
+Context
+-------
+You have full read/write access to the GitHub repository for "Rose Flower Shop" (static website hosted on GitHub Pages).
+The site currently has a gallery page that should show images organized into 4 categories (plus one extra folder — total 5 subfolders) stored in a Dropbox folder named:
+  /Apps/Rose-Flower-Shop-Gallery-API
+(That is, the Dropbox App is App Folder mode and contains 5 subfolders — one per category.)
+
+Goal
+----
+Implement a secure, maintainable integration so the site displays images directly from the Dropbox app folder. The owner will manage images by adding/removing files inside the relevant Dropbox subfolder. Do **not** expose Dropbox access tokens on the client or commit secrets to the repo.
+
+Deliverables
+-----------
+1. Add a serverless function (Netlify-style) that:
+   - Uses a secret environment variable `DROPBOX_TOKEN` (the access token).
+   - Lists the top-level folders (categories) in the Dropbox App folder and for each folder lists image files.
+   - For each image file, calls Dropbox `files/get_temporary_link` to obtain a temporary URL to display on the website.
+   - Returns JSON: `{ categories: { "<FolderName>": [ { name, url, size, id } , ... ], ... } }`
+   - Handles pagination (Dropbox list_folder may respond with `has_more`).
+   - Returns useful error messages and sets appropriate CORS headers:
+     - `Access-Control-Allow-Origin` should be `*` for testing, but code should be ready to restrict to a configured origin.
+   - Is located at `netlify/functions/gallery.js` (or equivalent Netlify function location).
+   - Uses Node 18+ built-in fetch; if you prefer a dependency, add it to `package.json`.
+
+2. Modify the frontend gallery page to:
+   - Fetch the serverless function endpoint (configurable `API_BASE`) and render categories and images.
+   - Use `img.loading="lazy"` and sensible `alt` attributes.
+   - Gracefully show errors and a “no images” state for an empty category.
+   - Keep the Dropbox token entirely out of client code.
+
+3. Add a small README section `docs/README-dropbox-gallery.md` describing:
+   - How to configure Netlify environment variables (`DROPBOX_TOKEN`, optional `DROPBOX_APP_KEY`, `DROPBOX_APP_SECRET` for refresh-token flows).
+   - How the owner should add/remove images (via dropbox.com or Dropbox desktop).
+   - How `get_temporary_link` works (temporary URLs ~4 hours) and what to do for permanent links (shared links).
+
+4. Add unit/integration test or test script (optional but preferred):
+   - A tiny node script `tools/test-gallery-function.js` that calls the deployed function URL (or local emulator) and validates JSON shape.
+
+5. Create a pull request with:
+   - Clear summary of changes.
+   - Example .env.example (without secrets) showing `DROPBOX_TOKEN=REPLACE_ME`.
+   - A short testing checklist in the PR description.
+
+Important constraints & notes
+---------------------------
+- **Do not** commit any real tokens, app secrets, or app keys.
+- If the repo already contains a serverless platform config (Netlify/Vercel), use that; otherwise implement Netlify function at `netlify/functions/gallery.js`.
+- Support both App-Folder and Full Dropbox apps — detect the root path from repo config or a constant at the top of the function (`DROPBOX_ROOT_PATH` = "" for App Folder, or "/Rose-Flower-Shop-Gallery-API" for Full Dropbox).
+- Use Dropbox endpoints:
+  - `https://api.dropboxapi.com/2/files/list_folder`
+  - `https://api.dropboxapi.com/2/files/get_temporary_link`
+- Handle common image file extensions: `.jpg .jpeg .png .gif .webp .svg` (ignore non-image files by extension).
+- Implement basic caching in-memory for the lifetime of the function instance (optional): e.g., cache the generated category JSON for 60–300 seconds to reduce Dropbox calls.
+
+Acceptance criteria / tests
+--------------------------
+- The function returns HTTP 200 and JSON with `categories` object (keys = folder names).
+- Each category array element has `name` and `url` string fields and `id` or `path_lower`.
+- The frontend displays images from each of the 5 subfolders when the owner adds images to Dropbox.
+- No secrets are present in the commit history or in the repo files.
+
+Make the actual code changes
+----------------------------
+- Create the function file `netlify/functions/gallery.js`.
+- Update gallery HTML/JS (point to `API_BASE`).
+- Add `docs/README-dropbox-gallery.md`.
+- Add `tools/test-gallery-function.js`.
+- Add `.env.example`.
+- Create a branch `feature/dropbox-gallery-integration`, commit, and open a PR.
+
+PR description checklist for you to include
+------------------------------------------
+- What I changed (files)
+- How to configure Netlify env var `DROPBOX_TOKEN`
+- Local dev instructions (`npm install`, `netlify dev` or `netlify-labs/run` instructions)
+- How to test manually (open URL + steps)
+- Security note: do not commit tokens
+
+Extra (optional)
+---------------
+If you detect that the repo is already deployed on GitHub Pages and the owner wants *zero server* operations, add an alternate minimal flow:
+- A guide and helper script that allows the owner to create **shared links** for files and place a public `gallery-data.json` in the repo (manual workflow). This is a fallback and should be clearly called out.
+
+Logging & error handling
+------------------------
+- Log Dropbox API errors with context (folder path and API error text).
+- Return HTTP 500 with `{ error: "..." }` on server errors.
+
+Style & code quality
+--------------------
+- Prefer modern JS (async/await), clear function separation, small functions.
+- Add inline comments and JSDoc for exported handler.
+- Keep changes minimal and easy to review.
+
+Please implement these changes, push them to a branch `feature/dropbox-gallery-integration`, open a PR against `main`, and include testing instructions and the `.env.example` file. Thank you.

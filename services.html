@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Rose Flower Shop</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        rose: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            600: '#e11d48',
+                            700: '#be123c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <span class="text-2xl font-serif font-bold text-rose-600">Rose</span>
+                        <span class="text-xl font-light text-gray-600">Flower Shop</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="home.heroTitle">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="about.title">About</a>
+                    <a href="services.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="home.servicesTitle">Services</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="gallery.title">Gallery</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="contact.title">Contact</a>
+                    <div class="flex items-center space-x-2 border-l pl-4 ml-4">
+                        <button class="lang-btn text-sm font-medium transition" data-lang="en">EN</button>
+                        <span class="text-gray-300">|</span>
+                        <button class="lang-btn text-sm font-medium transition" data-lang="el">EL</button>
+                    </div>
+                </nav>
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-button" type="button" class="text-gray-600 hover:text-rose-600 focus:outline-none" aria-expanded="false">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="home.heroTitle">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="about.title">About</a>
+                <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="home.servicesTitle">Services</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="gallery.title">Gallery</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="contact.title">Contact</a>
+                <div class="px-3 py-2 flex space-x-4">
+                    <button class="lang-btn text-base font-medium" data-lang="en">English</button>
+                    <button class="lang-btn text-base font-medium" data-lang="el">Ελληνικά</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Weddings Section -->
+        <div id="weddings" class="min-h-screen">
+            <section class="relative h-96 flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/265722/pexels-photo-265722.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                    <div class="absolute inset-0 bg-black/50"></div>
+                </div>
+                <div class="relative z-10 text-center text-white px-4">
+                    <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4" data-i18n="services.weddings.title">Wedding Services</h1>
+                    <p class="text-xl md:text-2xl font-light" data-i18n="services.weddings.subtitle">Your dream wedding</p>
+                </div>
+            </section>
+
+            <section class="py-20 bg-white">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <p class="text-xl text-gray-700 leading-relaxed text-center mb-16" data-i18n="services.weddings.intro">
+                        From the bridal bouquet to the reception decor, we handle it all.
+                    </p>
+
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-12 text-center" data-i18n="services.weddings.servicesTitle">What We Offer</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="services.weddings.service1">Bridal Bouquets</h3>
+                            <p class="text-gray-700 leading-relaxed" data-i18n="services.weddings.service1Desc">Custom designed for your style.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="services.weddings.service2">Ceremony Decor</h3>
+                            <p class="text-gray-700 leading-relaxed" data-i18n="services.weddings.service2Desc">Church and venue decoration.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="services.weddings.service3">Reception Styling</h3>
+                            <p class="text-gray-700 leading-relaxed" data-i18n="services.weddings.service3Desc">Table centerpieces and arrangements.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="services.weddings.service4">Car Decoration</h3>
+                            <p class="text-gray-700 leading-relaxed" data-i18n="services.weddings.service4Desc">Elegant floral touches for your arrival.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Baptisms Section -->
+        <div id="baptisms" class="min-h-screen">
+            <section class="relative h-96 flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/1666069/pexels-photo-1666069.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                    <div class="absolute inset-0 bg-black/50"></div>
+                </div>
+                <div class="relative z-10 text-center text-white px-4">
+                    <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4" data-i18n="services.baptisms.title">Baptism Services</h1>
+                    <p class="text-xl md:text-2xl font-light" data-i18n="services.baptisms.subtitle">Celebration of life</p>
+                </div>
+            </section>
+
+            <section class="py-20 bg-white">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <p className="text-xl text-gray-700 leading-relaxed text-center mb-16" data-i18n="services.baptisms.intro">
+                        Charming decorations for this special milestone.
+                    </p>
+
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-12 text-center" data-i18n="services.baptisms.servicesTitle">Services</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="services.baptisms.service1">Font Decoration</h3>
+                            <p class="text-gray-700 leading-relaxed" data-i18n="services.baptisms.service1Desc">Beautiful floral accents.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="services.baptisms.service2">Candles</h3>
+                            <p class="text-gray-700 leading-relaxed" data-i18n="services.baptisms.service2Desc">Custom decorated candles.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="services.baptisms.service3">Reception</h3>
+                            <p class="text-gray-700 leading-relaxed" data-i18n="services.baptisms.service3Desc">Venue styling.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="services.baptisms.service4">Favors</h3>
+                            <p class="text-gray-700 leading-relaxed" data-i18n="services.baptisms.service4Desc">Floral touches for guest favors.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Events Section -->
+        <div id="events" class="min-h-screen">
+            <section class="relative h-96 flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/2306281/pexels-photo-2306281.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                    <div class="absolute inset-0 bg-black/50"></div>
+                </div>
+                <div class="relative z-10 text-center text-white px-4">
+                    <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4" data-i18n="services.events.title">Event Services</h1>
+                    <p class="text-xl md:text-2xl font-light" data-i18n="services.events.subtitle">Corporate and Private</p>
+                </div>
+            </section>
+
+            <section class="py-20 bg-white">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <p className="text-xl text-gray-700 leading-relaxed text-center mb-16" data-i18n="services.events.intro">
+                        Elevate your event with our floral designs.
+                    </p>
+
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-12 text-center" data-i18n="services.events.servicesTitle">Services</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="services.events.service1">Corporate Events</h3>
+                            <p class="text-gray-700 leading-relaxed" data-i18n="services.events.service1Desc">Professional arrangements.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="services.events.service2">Parties</h3>
+                            <p class="text-gray-700 leading-relaxed" data-i18n="services.events.service2Desc">Birthday and anniversary decor.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="services.events.service3">Gala Dinners</h3>
+                            <p class="text-gray-700 leading-relaxed" data-i18n="services.events.service3Desc">Elegant table settings.</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="services.events.service4">Installations</h3>
+                            <p class="text-gray-700 leading-relaxed" data-i18n="services.events.service4Desc">Large scale floral art.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-4">Rose Flower Shop</h3>
+                    <p class="text-gray-400">Rethymno, Crete</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4" data-i18n="contact.hours">Opening Hours</h4>
+                    <p class="text-gray-400" data-i18n="contact.hoursInfo">Mon-Sat: 9:00 - 21:00</p>
+                    <p class="text-gray-400" data-i18n="contact.hoursSunday">Sun: Closed</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Social</h4>
+                    <a href="https://www.facebook.com/anna.ntakakh" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">Facebook</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                &copy; 2024 Rose Flower Shop. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/language-toggle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

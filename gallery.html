@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Rose Flower Shop</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        rose: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            600: '#e11d48',
+                            700: '#be123c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <span class="text-2xl font-serif font-bold text-rose-600">Rose</span>
+                        <span class="text-xl font-light text-gray-600">Flower Shop</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="home.heroTitle">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="about.title">About</a>
+                    <a href="services.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="home.servicesTitle">Services</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="gallery.title">Gallery</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-rose-600 transition font-medium" data-i18n="contact.title">Contact</a>
+                    <div class="flex items-center space-x-2 border-l pl-4 ml-4">
+                        <button class="lang-btn text-sm font-medium transition" data-lang="en">EN</button>
+                        <span class="text-gray-300">|</span>
+                        <button class="lang-btn text-sm font-medium transition" data-lang="el">EL</button>
+                    </div>
+                </nav>
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-button" type="button" class="text-gray-600 hover:text-rose-600 focus:outline-none" aria-expanded="false">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="home.heroTitle">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="about.title">About</a>
+                <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="home.servicesTitle">Services</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="gallery.title">Gallery</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-rose-600 hover:bg-gray-50" data-i18n="contact.title">Contact</a>
+                <div class="px-3 py-2 flex space-x-4">
+                    <button class="lang-btn text-base font-medium" data-lang="en">English</button>
+                    <button class="lang-btn text-base font-medium" data-lang="el">Ελληνικά</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="relative h-96 flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/1459505/pexels-photo-1459505.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                <div class="absolute inset-0 bg-black/50"></div>
+            </div>
+            <div class="relative z-10 text-center text-white px-4">
+                <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4" data-i18n="gallery.title">Gallery</h1>
+                <p class="text-xl md:text-2xl font-light" data-i18n="gallery.subtitle">Our Portfolio</p>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-xl text-gray-700 leading-relaxed text-center mb-12 max-w-3xl mx-auto" data-i18n="gallery.intro">
+                    Explore our collection of floral arrangements.
+                </p>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="filter-btn px-6 py-3 rounded-lg font-medium transition bg-rose-600 text-white" data-filter="all" data-i18n="gallery.filterAll">All</button>
+                    <button class="filter-btn px-6 py-3 rounded-lg font-medium transition bg-gray-100 text-gray-700 hover:bg-gray-200" data-filter="weddings" data-i18n="gallery.filterWeddings">Weddings</button>
+                    <button class="filter-btn px-6 py-3 rounded-lg font-medium transition bg-gray-100 text-gray-700 hover:bg-gray-200" data-filter="baptisms" data-i18n="gallery.filterBaptisms">Baptisms</button>
+                    <button class="filter-btn px-6 py-3 rounded-lg font-medium transition bg-gray-100 text-gray-700 hover:bg-gray-200" data-filter="events" data-i18n="gallery.filterEvents">Events</button>
+                    <button class="filter-btn px-6 py-3 rounded-lg font-medium transition bg-gray-100 text-gray-700 hover:bg-gray-200" data-filter="bouquets" data-i18n="gallery.filterBouquets">Bouquets</button>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="gallery-grid">
+                    <!-- Wedding Items -->
+                    <div class="gallery-item group cursor-pointer" data-category="weddings">
+                        <div class="relative h-80 rounded-xl overflow-hidden shadow-md">
+                            <img src="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Wedding 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                <h3 class="text-white font-medium">Wedding Decor</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item group cursor-pointer" data-category="weddings">
+                        <div class="relative h-80 rounded-xl overflow-hidden shadow-md">
+                            <img src="https://images.pexels.com/photos/265722/pexels-photo-265722.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Wedding 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                <h3 class="text-white font-medium">Bridal Bouquet</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Baptism Items -->
+                    <div class="gallery-item group cursor-pointer" data-category="baptisms">
+                        <div class="relative h-80 rounded-xl overflow-hidden shadow-md">
+                            <img src="https://images.pexels.com/photos/1666069/pexels-photo-1666069.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Baptism 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                <h3 class="text-white font-medium">Baptism Setup</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event Items -->
+                    <div class="gallery-item group cursor-pointer" data-category="events">
+                        <div class="relative h-80 rounded-xl overflow-hidden shadow-md">
+                            <img src="https://images.pexels.com/photos/2306281/pexels-photo-2306281.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Event 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                <h3 class="text-white font-medium">Event Styling</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bouquet Items -->
+                    <div class="gallery-item group cursor-pointer" data-category="bouquets">
+                        <div class="relative h-80 rounded-xl overflow-hidden shadow-md">
+                            <img src="https://images.pexels.com/photos/931162/pexels-photo-931162.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bouquet 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                <h3 class="text-white font-medium">Fresh Bouquet</h3>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="gallery-item group cursor-pointer" data-category="bouquets">
+                        <div class="relative h-80 rounded-xl overflow-hidden shadow-md">
+                            <img src="https://images.pexels.com/photos/1055379/pexels-photo-1055379.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bouquet 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                <h3 class="text-white font-medium">Elegant Roses</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div class="text-center">
+            <img class="lightbox-content" id="lightbox-img">
+            <div class="mt-4 text-white">
+                <h3 id="lightbox-title" class="text-2xl font-serif font-bold mb-2"></h3>
+                <p id="lightbox-desc" class="text-gray-300"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-4">Rose Flower Shop</h3>
+                    <p class="text-gray-400">Rethymno, Crete</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4" data-i18n="contact.hours">Opening Hours</h4>
+                    <p class="text-gray-400" data-i18n="contact.hoursInfo">Mon-Sat: 9:00 - 21:00</p>
+                    <p class="text-gray-400" data-i18n="contact.hoursSunday">Sun: Closed</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Social</h4>
+                    <a href="https://www.facebook.com/anna.ntakakh" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">Facebook</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                &copy; 2024 Rose Flower Shop. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/language-toggle.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+    <!-- Dynamic Gallery Loader (loads from Dropbox) -->
+    <script src="js/gallery-loader.js"></script>
+</body>
+</html>
